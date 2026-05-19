@@ -13,7 +13,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+var disableHttpsRedirect = builder.Configuration.GetValue<bool>("DISABLE_HTTPS_REDIRECT");
+if (!disableHttpsRedirect)
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseRouting();
 
 app.UseAuthorization();

@@ -19,3 +19,25 @@ O workflow `.github/workflows/azure-webapp-deploy.yml` irá:
 - compilar o projeto
 - publicar o app
 - implantar no App Service
+
+## Executar com Docker
+
+Também é possível rodar o projeto em container Docker.
+
+Para construir a imagem:
+
+```bash
+docker build -t programacao_web .
+```
+
+Para executar o container:
+
+```bash
+docker run -p 80:80 programacao_web
+```
+
+Depois, acesse:
+
+```text
+http://localhost
+```
